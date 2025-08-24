@@ -1,0 +1,7 @@
+Symbols
+    > --> greater than
+    >= --> greater than equal to
+    < --> less than
+    <= --> less than equal to
+    == --> equal to
+    != --> not equal to
