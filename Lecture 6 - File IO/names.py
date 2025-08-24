@@ -1,44 +1,59 @@
-# name = input("What's your name? ")
-# print(f"hello, {name}")
-
-
-
-# --------------for multiple values 
-
-# names = []
-
-# for _ in range(3):
-#     name = input("What's your name? ")
-#     names.append(name)
-
-#     other way
-
 # names = []
 
 # for _ in range(3):
 #     names.append(input("What's your name? "))
 
+
 # for name in sorted(names):
 #     print(f"hello, {name}")
 
 
-# =================How to save in python ?================
 
-## Saves only one, because file = open("names.txt", "w") recreates a file
-# name = input("What's your name? ")
 
-# file = open("names.txt", "w")
-# file.write(name)
+# ----------------------------------------------------------------------------------------------------------
+
+# name = input("Whats your name? ")
+
+# file = open("names.txt", "a")
+# file.write(f"{name}\n")
 # file.close()
 
-## code for appended the values 
+# ----------------------------------------------------------------------------------------------------------
+# name = input("Whats your name? ")
 
-name = input("What's your name? ")
-
-file = open("names.txt", "a")
-file.write(name)
-file.close()
+# with open("names.txt", "a") as file:
+#     file.write(f"{name}\n")
 
 
+# ----------------------------------Reading--------------------------------------------------------------
+# 
+# with open("names.txt", "r" ) as file:
+#     lines = file.readlines()
 
 
+# for line in lines:
+#     # print("hello,", line, end="")
+#     print("hello,", line.rstrip())
+
+# ---------------------------------------------------------
+# with open("names.txt", "r" ) as file:
+#     for line in file:
+#         print("hello,", line.rstrip())
+
+
+
+# ---------------------------------Sorting File itself--------------------------------------------------------------
+# with open("names.txt") as file:
+#     for line in sorted(file):
+#         print("hello,",line.rstrip())
+# ---------------------------------Sorting and Reading--------------------------------------------------------------
+names = []
+
+with open("names.txt") as file:
+    for line in file:
+        names.append(line.rstrip())
+
+for name in sorted(names):
+    print(f"hello, {name}")
+# for name in sorted(names, reverse=True):
+#     print(f"hello, {name}")
